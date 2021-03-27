@@ -11,6 +11,8 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	maven { url 'https://maven.enginehub.org/repo/' }
+	maven { url 'https://jitpack.io' }
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -29,6 +31,18 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+
+	// implementation "com.sk89q.worldedit:worldedit-fabric-mc1.16.4:7.3.0-SNAPSHOT" // This works
+
+	// implementation "com.sk89q.worldedit:worldedit-fabric-mc1.16.3:7.2.4" // This works
+
+    // modImplementation "com.sk89q.worldedit:worldedit-fabric-mc1.16.3:7.2.4" // This doesn't work
+
+	// modImplementation "com.sk89q.worldedit:worldedit-fabric-mc1.16.4:7.3.0-SNAPSHOT" // This doesn't work
+
+	// implementation 'com.github.CoolMineman:BitsAndChisels:master-SNAPSHOT' // This works
+
+	// modImplementation 'com.github.CoolMineman:BitsAndChisels:master-SNAPSHOT' // This doesn't work
 }
 
 processResources {
